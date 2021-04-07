@@ -1,13 +1,13 @@
 const Pet = require('../models/pet')
 module.exports = app => {
-    app.get('/pets', (req, res) => {
+    app.get('/pet', (req, res) => {
         res.send('ok');
     });
 
-    app.post('/pets', (req, res) => {
+    app.post('/pet', (req, res) => {
         const pet = req.body;
         console.log(pet);
-        Pet.adiciona(error, pet, res);
+        Pet.adiciona(pet, res);
     });
 
 }
