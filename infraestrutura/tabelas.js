@@ -8,7 +8,7 @@ class Tabelas {
 
     criarAtendimento() {
 
-        const sql = 'CREATE TABLE IF NOT EXISTS Atendimentos(id int NOT NULL AUTO_INCREMENT, cliente VARCHAR(50) NOT NULL, Pet VARCHAR(20), servico VARCHAR(20) NOT NULL, Data DATETIME NOT NULL, DataCriacao DATETIME NOT NULL, Status VARCHAR(20)NOT NULL, Observacoes TEXT, PRIMARY KEY(ID))';
+        const sql = 'CREATE TABLE IF NOT EXISTS Atendimentos(id int NOT NULL AUTO_INCREMENT, cliente VARCHAR(11) NOT NULL, Pet VARCHAR(20), servico VARCHAR(20) NOT NULL, Data DATETIME NOT NULL, DataCriacao DATETIME NOT NULL, Status VARCHAR(20)NOT NULL, Observacoes TEXT, PRIMARY KEY(ID))';
 
         this.conexao.query(sql, (error) => {
             if (error) {

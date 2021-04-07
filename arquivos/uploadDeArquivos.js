@@ -11,10 +11,12 @@ module.exports = (caminho, nomeArquivo, callbackImagemCriada) => {
     console.log('teste->>>' + tipoEhValido)
 
     if (tipoEhValido) {
+
         const novoCaminho = `./assets/imagens/${nomeArquivo}${tipo}`;
         fs.createReadStream(caminho)
             .pipe(fs.createWriteStream(novoCaminho))
             .on('finish', () => callbackImagemCriada(novoCaminho))
+
 
     } else {
         const error = 'Tipo de arquivo Inválido!'
@@ -22,8 +24,5 @@ module.exports = (caminho, nomeArquivo, callbackImagemCriada) => {
         callbackImagemCriada(error);
 
     }
-
-
-
 
 }
